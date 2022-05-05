@@ -1,0 +1,60 @@
+	<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>pe.edu.upc</groupId>
+	<artifactId>MeetUs</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>MeetUs</name>
+	<description>MeetUs Site</description>
+
+	<properties>
+		<java.version>17</java.version>
+		<maven.compiler.source>1.17</maven.compiler.source>
+		<maven.compiler.target>1.17</maven.compiler.target>
+	</properties>
+
+	<build>
+		<finalName>MeetUs</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api -->
+		<dependency>
+			<groupId>jakarta.platform</groupId>
+			<artifactId>jakarta.jakartaee-api</artifactId>
+			<version>8.0.0</version> <!-- ANTES 9.1.0-->
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- este plugin nos permite trabajar con jsf -->
+		<!-- https://mvnrepository.com/artifact/jakarta.faces/jakarta.faces-api -->
+		<!-- el "<scope> provided" se agrega para que esta versión de la dependencia 
+			sea descargada por el wildfly -->
+			
+<!--		<dependency>
+			<groupId>jakarta.faces</groupId>
+			<artifactId>jakarta.faces-api</artifactId>
+			<version>3.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+ -->
+		<!-- primefaces está vinculado a jsf, para que primefaces trabaje con jakarta 
+			(osea la versión 9.1 para adelante) tenemos que especificarlo -->
+		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>10.0.0</version> <!-- antes 11.0.0-->
+		</dependency>
+	</dependencies>
+
+</project>
